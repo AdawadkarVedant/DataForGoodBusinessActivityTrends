@@ -1,0 +1,85 @@
+Field,Label,Value
+id,Dataset ID,2557f713-e8af-4ae8-9baf-8af5b9c28e8c
+title,Title of Dataset,Facebook Business Activity Trends during COVID19
+name,Dataset URL,facebook-business-activity-trends-during-covid19
+notes,Description,Business Activity Trends During COVID-19 uses the rate that businesses post on Facebook compared to pre-crisis levels to measure how crisis events are affecting different economic sectors each day. Learn more details here: https://dataforgood.facebook.com/dfg/tools/business-activity-trends and  https://dataforgood.facebook.com/dfg/resources/business-activity-trends-methodology-paper
+dataset_source,Source,Data for Good at Meta (previously Facebook)
+organization,Contributor,Data for Good at Meta
+dataset_date,Reference Period,[2020-03-01T00:00:00 TO 2022-11-29T23:59:59]
+last_modified,Updated,2023-05-15T20:33:29.964666
+data_update_frequency,Expected Update Frequency,As needed
+groups,Location,World
+license_title,License,Creative Commons Attribution International
+methodology,Methodology,Other
+methodology_other,Define Methodology,"Step 1: Count public posts. We analyze the posting activity by administrators of Facebook business pages before and after a crisis event. All data shared with partners is de-identified and aggregated at administrative levels.
+Step 2: Compare activity to pre-crisis levels. We compare post-crisis posting activity to a baseline distribution for that page in the year prior to the crisis.
+Step 3: Produce outputs. We aggregate these comparisons daily for each US county or global equivalent, grouping business pages by economic sector. The final output is an average across pages, similar to a percent change.
+
+Full details here: https://dataforgood.facebook.com/dfg/resources/business-activity-trends-methodology-paper
+
+Business verticals:
+We derived the business verticals by aggregating categories as defined by the admins on the business Pages.
+
+All: Refers to all businesses in the polygon. This includes but is not limited to all the following categories.
+
+Grocery and convenience stores: Retailers that sell everyday consumable goods including food (typically unprepared foods and ingredients) and a limited range of household goods (like toilet paper). These can include grocery stores, convenience stores, pharmacies and general stores.
+
+Retail: Retail other than grocery and convenience stores such as auto dealers, home goods stores, personal goods stores and general merchandise/big-box stores like Walmart
+
+Restaurants: Businesses that sell prepared food and beverages for on-premise or off-premise dining
+
+Local events: Events, activities and businesses that sell real-life experiences, such as amusement parks, bowling alleys, concert venues and social clubs
+
+Professional services: Services driven by demand from an individual event such as a legal need or health issue that require high customization. Providers usually have an advanced degree or certification and are considered experts and “knowledge workers.” Examples include CPAs, lawyers, medical professionals, architects.
+
+Business and utility services: Business services offering business-to-business services like construction, office cleaning, advertising and marketing companies and business software solutions. Utility services offer commodity services like electric, phone, internet, water and energy.
+
+Home services: Services driven by demand from an individual event at home such as plumbing or electrical work. Examples include home repairs, photographers, cleaning, mechanics, plumbers, electricians, landscapers, interior decorators.
+
+Lifestyle services: Specific to beauty, care and fitness services. These businesses offer standardized services that are part of a customer's regular routines. Examples include gyms, salons, barbers, and nonmedical and noneducational supervision, like childcare nurseries and pet care.
+
+Travel: Businesses that provide or sell transportation or accommodation services, such as airlines, hotels, car rentals and tour operators
+
+Manufacturing: Businesses that manufacture durable goods (like furniture and cars) or consumable goods (like food and personal goods) and have no or limited business-to-customer sales
+
+Public good: Includes government agencies, nonprofits and religious organizations
+
+Codebook:
+GADM ID (gadm_id): The GADM ID of the polygon
+
+GADM name (gadm_name): The GADM name of the polygon
+
+GADM level (gadm_level): The GADM level of the polygon
+
+GADM level 0 name (gadm0_name): The name of the polygon at GADM level 0 (i.e., country name). Equivalent to GADM name if the GADM level is 0.
+
+GADM level 1 name (gadm1_name): The name of the polygon at GADM level 1 (i.e., US state name). Equivalent to GADM name if GADM level is 1.
+
+GADM level 2 name (gadm2_name): The name of the polygon at the GADM 2 level (i.e., US county name). Equivalent to GADM name if GADM level is 2.
+
+Country (country): 2-character (ISO alpha-2) country code
+
+Business vertical (business_vertical): The business vertical of the aggregation. Business verticals are defined internally within Facebook from categories selected by the Page admins. We use business verticals as a proxy for local economic sectors. Included as a business vertical is the “All” category, which includes but is not limited to all the other business verticals.
+
+Activity quantile (activity_quantile): The level of activity as a quantile relative to the baseline period. This is equivalent to the 7-day average of what the University of Bristol researchers call the aggregated probability integral transform metric (see this article in Nature Communications). It’s calculated by first computing the approximate quantiles (the midquantiles in the article) of each Page’s daily activity relative to their baseline activity. The quantiles are summed and the sum is then shifted, rescaled and variance-adjusted to follow a standard normal distribution. The adjusted sum is then probability transformed through a standard normal cumulative distribution function to get a value between 0 and 1. We then average this value over the last 7 days to smooth out daily fluctuations. We give this metric a quantile interpretation since it compares the daily activity to the distribution of daily activity within the baseline period, where a value around 0.5 is considered normal activity. This is a one-vote-per-Page metric that gives equal weight to all businesses and is not heavily influenced by businesses that post a lot. We advise preferencing this metric, especially if robustness to outliers and numerical stability are important concerns.
+
+Activity percentage (activity_percentage): The 7-day rolling sum of total activity (i.e., total posts) as a percent of the average weekly baseline average. The weekly baseline average is calculated as the average of the 7-day sum of total activity every Monday within the baseline period. For each day during the crisis, we divide the 7-day rolling sum of total posts by this weekly baseline average and multiply by 100. A value around 100 is considered to be normal activity. This metric is the most easily interpretable but tends to be heavily influenced by businesses that post a lot, which may give misleading results. This metric is also numerically less stable when the number of posts is relatively low. We advise using this metric if interpretability is the most important criteria.
+
+Crisis start (crisis_ds): The crisis start date in YYYY-MM-DD format. The baseline period used is the 365 days prior to this date.
+
+Date (ds) - The date of the activity provided in YYYY-MM-DD format defined by Pacific Time"
+caveats,Caveats/Comments,"Business Activity Trends During COVID-19 measures how local businesses are affected by and recover from crisis events using data about posting activity on Facebook. Given the broad presence of small businesses on the Facebook platform, this dataset aims to provide timely estimates of global business activity without the common limitations of traditional data collection methods, such as scale, speed and nonstandardization. This method for understanding local economic activity, first described by the University of Bristol team and published in Nature Communications (https://www.nature.com/articles/s41467-020-15405-7), is intended to provide humanitarian organizations, researchers and policymakers with a broad view of subnational economic activity after disasters."
+tags,Tags,"covid-19, economics"
+resource_1_created,Created,2023-05-15T20:33:30.352863
+resource_1_description,Description,"Mar 1, 2020 – Nov 29, 2022"
+resource_1_format,File Format,CSV
+resource_1_download_url,Download URL,https://data.humdata.org/dataset/2557f713-e8af-4ae8-9baf-8af5b9c28e8c/resource/c5f0a00f-3651-4aa0-a193-e00f43ed6316/download/business-activity-trends-during-covid-19-20200301-20221129.zip
+resource_1_id,Resource ID,c5f0a00f-3651-4aa0-a193-e00f43ed6316
+resource_1_last_modified,Updated,2023-05-15T20:33:29.964666
+resource_1_metadata_modified,Metadata Updated,2023-05-22T09:06:50.323978
+resource_1_microdata,Microdata,False
+resource_1_dataset_id,Dataset ID,2557f713-e8af-4ae8-9baf-8af5b9c28e8c
+resource_1_resource_type,Resource Type,file.upload
+resource_1_name,Resource Name,Business Activity Trends During COVID-19 - 20200301-20221129.zip
+resource_1_mimetype,MIME Type,application/zip
+resource_1_size,Size,297.2M
